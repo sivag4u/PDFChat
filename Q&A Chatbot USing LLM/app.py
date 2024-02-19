@@ -1,12 +1,15 @@
 # Q&A Chatbot
-from langchain.llms import OpenAI
+from langchain_community.llms import OpenAI
+#from langchain.llms import OpenAI
 
 #from dotenv import load_dotenv
 
 #load_dotenv()  # take environment variables from .env.
 
 import streamlit as st
-import os
+import os 
+open_api_key="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"
+os.environ["OPENAI_API_KEY"]=open_api_key
 
 
 ## Function to load OpenAI model and get respones
@@ -17,7 +20,6 @@ def get_openai_response(question):
     return response
 
 ##initialize our streamlit app
-
 st.set_page_config(page_title="Q&A Demo")
 
 st.header("Langchain Application")
